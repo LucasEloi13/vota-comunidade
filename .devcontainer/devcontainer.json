@@ -1,0 +1,19 @@
+{
+  "name": "vota-comunidade-dev",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "php-apache",
+  "workspaceFolder": "/var/www/html",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "xdebug.php-pack",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "forwardPorts": [80, 3306],
+  "postCreateCommand": "chmod -R 777 /var/www/html"
+}

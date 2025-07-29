@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  php-apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/var/www/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: vota_comunidade
+      DB_USERNAME: root
+      DB_PASSWORD: root
+
+  db:
+    image: mysql:8.0
+    container_name: vota_db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vota_comunidade
+    volumes:
+      - db_data:/var/lib/mysql
+      - ../database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ../database/seed.sql:/docker-entrypoint-initdb.d/seed.sql
+
+volumes:
+  db_data:
