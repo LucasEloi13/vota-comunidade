@@ -2,32 +2,6 @@
 
 Sistema de votação comunitária para condomínios.
 
-## Estrutura do Projeto
-
-```
-├── index.php              # Arquivo principal com roteamento
-├── setup.php              # Script de configuração do banco
-├── .env                   # Variáveis de ambiente
-├── .htaccess              # Configuração do Apache
-├── app/
-│   ├── api/
-│   │   ├── dashboard_stats.php
-│   │   └── dashboard_atividades.php
-│   ├── controllers/
-│   │   └── AuthController.php
-│   ├── models/
-│   └── views/
-│       ├── login.php
-│       ├── dashboard.php
-│       └── admin_dashboard.php
-├── config/
-│   └── database.php       # Configuração do banco
-├── database/
-│   ├── init.sql          # Script de criação das tabelas
-│   └── seed.sql          # Dados iniciais
-└── public/               # Arquivos públicos (CSS, JS, imagens)
-```
-
 ## Configuração
 
 1. Configure o arquivo `.env` com suas credenciais do banco:
@@ -39,10 +13,36 @@ DB_USERNAME=root
 DB_PASSWORD=root
 ```
 
-2. Execute o script de configuração:
+2. Execute o script de inicialização (recomendado):
+```bash
+./start.sh
+```
+
+**OU** execute manualmente:
 ```bash
 php setup.php
+php -S 0.0.0.0:8080
 ```
+
+## Inicialização Rápida
+
+Para iniciar a aplicação de forma automatizada, use o script de inicialização:
+
+```bash
+# Torna o script executável (primeira vez apenas)
+chmod +x start.sh
+
+# Inicia a aplicação
+./start.sh
+```
+
+O script irá:
+- ✅ Verificar dependências (PHP, banco de dados)
+- ✅ Testar conexão com o banco
+- ✅ Inicializar estrutura do banco (se necessário)
+- ✅ Encontrar uma porta disponível (8080, 8081 ou 8082)
+- ✅ Iniciar o servidor web
+- 🌐 Abrir o navegador automaticamente (se disponível)
 
 ## Usuários Padrão
 
