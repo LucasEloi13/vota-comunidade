@@ -38,6 +38,15 @@ function route($path) {
             exit;
             break;
             
+        case '/gerenciar-sindicos':
+            // Verificar se é admin
+            if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['tipo'] !== 'admin') {
+                header("Location: /login");
+                exit;
+            }
+            include __DIR__ . '/app/controllers/SindicoController.php';
+            break;
+            
         default:
             http_response_code(404);
             echo "<h1>404 - Página não encontrada</h1>";

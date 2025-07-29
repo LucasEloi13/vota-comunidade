@@ -2,6 +2,14 @@
 
 Sistema de votação comunitária para condomínios.
 
+## 📚 Documentação
+
+- **[📖 Documentação Completa](DOCUMENTATION.md)** - Guia detalhado de desenvolvimento
+- **[🏗️ Arquitetura MVC](DOCUMENTATION.md#arquitetura-mvc)** - Como o sistema está estruturado
+- **[🚀 Como Criar Funcionalidades](DOCUMENTATION.md#como-criar-novas-funcionalidades)** - Passo a passo para desenvolvedores
+
+## ⚡ Início Rápido
+
 ## Configuração
 
 1. Configure o arquivo `.env` com suas credenciais do banco:
@@ -73,3 +81,25 @@ O script irá:
 - Bootstrap 5
 - HTML5/CSS3
 - JavaScript
+
+## 📁 Estrutura do Projeto
+
+```
+├── index.php              # Ponto de entrada e roteamento
+├── setup.php              # Script de configuração do banco
+├── DOCUMENTATION.md       # Documentação completa do projeto
+├── app/
+│   ├── controllers/       # Controladores (MVC)
+│   ├── models/           # Modelos (MVC)
+│   └── views/            # Visualizações (MVC)
+├── config/
+│   └── database.php      # Configuração do banco
+└── database/
+    ├── init.sql         # Script de criação das tabelas
+    └── seed.sql         # Dados iniciais
+```
+
+## 🔗 Links Úteis
+
+- **[Documentação Completa](DOCUMENTATION.md)** - Guia detalhado para desenvolvedores
+- **[GitHub Repository](https://github.com/LucasEloi13/vota-comunidade)**

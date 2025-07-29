@@ -36,7 +36,7 @@ if (!isset($_SESSION['usuario'])) {
         }
         .logout-btn {
             background-color: red;
-            color: white !important;
+            color: white;
         }
     </style>
 </head>
@@ -45,7 +45,7 @@ if (!isset($_SESSION['usuario'])) {
         <span class="navbar-brand fw-bold">Vota Comunidade</span>
         <div>
             <a href="/dashboard" class="me-3">Início</a>
-            <a href="#">Síndicos</a>
+            <a href="/gerenciar-sindicos">Síndicos</a>
             <a href="#" class="ms-3">Moradores</a>
             <a href="#" class="ms-3">Condomínios</a>
             <a href="/logout" class="btn logout-btn ms-4">Sair</a>
@@ -58,7 +58,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="p-4 bg-white card-option">
-                    <a href="#">Gerenciar Síndicos</a>
+                    <a href="/gerenciar-sindicos">Gerenciar Síndicos</a>
                     <p class="text-muted mt-2 mb-0">Aprovar/rejeitar cadastros, editar informações.</p>
                 </div>
             </div>
